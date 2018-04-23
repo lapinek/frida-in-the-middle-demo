@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Login
+      </h1>
+
+      <% include ../_message.ejs %>
+    </header>
+
+    <main class="form-container">
+      <form class= action="/session/login" method="post">
+        <label>
+          Username
+          <div>
+            <input name="userName" value="" required>
+          </div>
+        </label>
+        <label>
+          Password
+          <div>
+            <input name="password" type="password" value="" required>
+          </div>
+        </label>
+        <button type="submit">Submit</button>
+        <div>
+          OR
+          <div>
+            <a href="/session/registration">Register</a>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

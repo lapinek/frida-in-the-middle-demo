@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+      <% if (data.profile) { %>
+        <li>
+          <a href="/profile">Profile</a>
+        </li>
+        <li>
+          <a href="/session/logout">Logout</a>
+        </li>
+      <% } else { %>
+        <li>
+          <a href="/session/login">Login</a>
+        </li>
+      <% } %>
+  </ul>
+</nav>

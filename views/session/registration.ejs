@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Registration
+      </h1>
+
+      <% include ../_message.ejs %>
+    </header>
+
+    <% properties = data.requirements.registrationProperties.properties %>
+    <% required = data.requirements.registrationProperties.required %>
+
+    <main class="form-container">
+      <form class= action="/session/registration" method="post">
+        <% required.forEach(function (key) { %>
+          <label>
+            <%= properties[key].title %>
+            <div>
+              <input name="<%= key %>" value="" required minLength="<%= properties[key].minLength %>">
+            </div>
+          </label>
+        <% }) %>
+        <label>
+          Password
+          <div>
+            <input name="password" type="password" value="" required minLength="8">
+          </div>
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+
+    <footer>
+      <% include ../_nav.ejs %>
+    </footer>
+  </body>
+</html>
